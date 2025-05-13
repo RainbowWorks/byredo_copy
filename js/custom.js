@@ -23,6 +23,10 @@ $(function () {
         speed: 1000,
     });
 
-
+    $('.main_mostlove_slide').slick({
+        slidesToShow: 4,
+        arrows: false,
+        dots: true,
+    });
 
 });
