@@ -23,6 +23,22 @@ $(function () {
         speed: 1000,
     });
 
+
+});
+
+$(function () {
+    const swiper = new Swiper('.main_collection_right', {
+        direction: 'vertical',
+        loop: true,
+        mousewheel: true,
+        slidesPerView: 2.5,
+        spaceBetween: 40,
+        scrollbar: {
+            el: '.swiper-scrollbar', // 스크롤바 위치 지정
+            draggable: true, // 드래그 가능하도록 설정
+        },
+
+    });
 });
 
 $(function () {
@@ -58,6 +74,7 @@ $(function () {
         },
     });
 });
+
 
 $(function () {
     $('.main_product .tab_product button').on('click', function () {
