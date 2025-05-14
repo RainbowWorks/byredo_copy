@@ -21,6 +21,7 @@
 .default .title h2 {
     font-size: 4rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .default .title h3 {
@@ -36,6 +37,7 @@
     /* fz, fw는 1.6, 400이 기본이다. 하지만 써준다. */
     opacity: 0.75;
     /* 농도 낮추기, 잘 안쓰는 기술?? */
+    text-align: center;
 }
 
 .default_btn {
