@@ -94,7 +94,7 @@ body {
     /*제자리*/
     left: 50%;
 
-    padding: 1.6rem 0;
+    padding: 8px 0;
     /*아래위1.6 좌우0*/
 
     opacity: 0;
@@ -104,7 +104,7 @@ body {
     /*0에서 -24px까지 올라온다.*/
 
     background: var(--white-color);
-    border-radius: 8px;
+
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
     /*좌우안떨어지고4px*/
 
@@ -128,7 +128,7 @@ body {
 #header .gnb>ul>li ul a {
     display: block;
     line-height: 4rem;
-    padding: 0 4rem;
+    padding: 0 3.2rem;
     /*좌우로4rem*/
     text-align: center;
 }
@@ -315,6 +315,11 @@ body {
 
 .main_mostlove {
     background: var(--background-color);
+    position: relative;
+}
+
+.main_mostlove .inner {
+    position: relative;
 }
 
 .main_mostlove .inner>* {
@@ -337,12 +342,22 @@ body {
     font-weight: 600;
 }
 
-.main_mostlove .arrows {
-    display: flex;
-    justify-content: center;
-    gap: 3.2rem;
 
-    padding-top: 4rem;
+
+.main_mostlove .arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    width: calc(144rem + 12rem);
+
+
 }
 
 .main_collection .inner .left {}
@@ -362,12 +377,27 @@ body {
 
 .main_collection .inner .main_collection_right {
     flex: 1;
-    height: 72.9rem;
-    width: 65rem;
-
-
+    height: 64rem;
+    margin-left: 1.6rem;
 }
 
+.main_collection .inner .main_collection_right .swiper-slide .txt {
+    display: flex;
+    flex-direction: column;
+    /* p와 price를 세로로 나열 */
+    padding-left: 3.2rem;
+    /* 이미지와 텍스트 사이의 간격 */
+}
+
+.main_collection .swiper-slide img {
+    height: 24rem;
+
+    width: auto;
+    /* 너비는 비율에 맞게 자동으로 조정 */
+    object-fit: cover;
+    /* 비율을 유지하면서 잘리지 않도록 설정 */
+    overflow: hidden;
+}
 
 .main_collection .inner .main_collection_right h3 {
     font-size: 2rem;
@@ -376,6 +406,11 @@ body {
 }
 
 .main_collection .inner .main_collection_right p {
+    margin-top: 8px;
+}
+
+.main_collection .inner .main_collection_right span {
+    font-size: 1.2rem;
     margin-top: 8px;
 }
 
@@ -389,26 +424,30 @@ body {
 .main_collection .btn_wrap {
     display: flex;
 
-    gap: 2rem;
+    gap: 1.6rem;
     margin-top: 3.2rem;
 }
 
 .main_collection .btn_wrap .default_btn {
     position: relative;
     z-index: 1;
-
+    display: inline-flex;
     align-items: center;
     flex-direction: column;
 
-    padding: 0.6rem 2.4rem;
-    height: 4rem;
-    border: 0;
-    color: var(--primary-color);
-    font-size: 1.6rem;
+    padding: 0 2.4rem;
+    height: 3.2rem;
+    border: 1px solid #ddd;
+
+    font-size: 1.4rem;
 
     overflow: hidden;
     /*before background 넣고 튀어나온 색 다 잘라냄*/
-    background: #ddd;
+
+}
+
+.main_collection .btn_wrap .default_btn::before {
+    background: #f9f9f9;
 }
 
 
@@ -420,26 +459,10 @@ body {
 
     align-items: center;
     /* 이미지와 텍스트 수직 가운데 정렬 */
-    padding: 3rem;
+
     box-sizing: border-box;
 }
 
-.main_collection .inner .main_collection_right .swiper-slide .txt {
-    display: flex;
-    flex-direction: column;
-    /* p와 price를 세로로 나열 */
-    padding-left: 20px;
-    /* 이미지와 텍스트 사이의 간격 */
-}
-
-.main_collection .swiper-slide img {
-    height: 29rem;
-    /* 세로 길이를 291.6px로 설정 */
-    width: auto;
-    /* 너비는 비율에 맞게 자동으로 조정 */
-    object-fit: cover;
-    /* 비율을 유지하면서 잘리지 않도록 설정 */
-}
 
 
 #footer {
