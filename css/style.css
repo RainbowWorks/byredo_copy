@@ -365,7 +365,52 @@ body {
     height: 72.9rem;
     width: 65rem;
 
+
 }
+
+
+.main_collection .inner .main_collection_right h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.main_collection .inner .main_collection_right p {
+    margin-top: 8px;
+}
+
+.main_collection .inner .main_collection_right .price {
+    margin-top: 1.6rem;
+    font-weight: 600;
+}
+
+
+
+.main_collection .btn_wrap {
+    display: flex;
+
+    gap: 2rem;
+    margin-top: 3.2rem;
+}
+
+.main_collection .btn_wrap .default_btn {
+    position: relative;
+    z-index: 1;
+
+    align-items: center;
+    flex-direction: column;
+
+    padding: 0.6rem 2.4rem;
+    height: 4rem;
+    border: 0;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+
+    overflow: hidden;
+    /*before background 넣고 튀어나온 색 다 잘라냄*/
+    background: #ddd;
+}
+
 
 .main_collection .inner .main_collection_right .swiper-slide {
     display: flex;
@@ -466,3 +511,7 @@ body {
 #footer address {
     color: var(--body-color);
 }
+
+/* * {
+    outline: 1px solid tomato;
+}*/
