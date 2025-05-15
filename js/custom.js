@@ -1,5 +1,36 @@
 
 $(function () {
+    /*메뉴 펴주는 일 할거다. slideDown 펴지는 명령!!! 어렵다!!*/
+    $('.mbtn').on('click', function () {
+        $(this).toggleClass('is-active')
+        $('.gnb').toggleClass('on')
+        /*active를 붙여도 된다. 일반적으로는 on 사용한다.*/
+        $('#header h1').toggleClass('on')
+    })
+    $('.gnb>ul>li>a').on('click', function (e) {
+        if ($('.gnb').hasClass('on') && $(this).next().is('ul')) {
+            /*if는 이렇게 했을 때 작동한다.&& rmflrh*/
+            e.preventDefault();
+            /*preventDefault 이벤트 자체를 막는다.*/
+            $('.gnb>ul>li ul').stop().slideUp();
+            /*내가 누른거 외에는 접고 열린다.*/
+            $(this).next().stop().slideToggle();
+            /* slideToggle열린거닫게한다. */
+        };
+    });
+
+    $(window).on('resize', function () {
+        let ww = $(window).width();
+        if (ww > 768) {
+            $('.gnb').removeClass('on');
+            $('.gnb>ul>li ul').removeAttr('style');
+        };
+    });
+});
+
+
+
+$(function () {
     $(window).on('scroll', function () {
         let sct = $(window).scrollTop();
 

@@ -62,6 +62,8 @@ body {
     gap: 3.2rem;
 }
 
+
+
 #header a {
     /*헤더 아래 있는 모든 a*/
     white-space: nowrap;
@@ -119,7 +121,7 @@ body {
 }
 
 #header .gnb>ul>li:focus-within ul {
-    /*focus-within 탭키 눌렀을때 메뉴 다 나올 수 있게 하는 방법*/
+
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -12px);
@@ -142,6 +144,142 @@ body {
     gap: 1.2rem;
 }
 
+.mbtn {
+    display: none;
+}
+
+
+@media (max-width:768px) {
+    #header {}
+
+    #header .hd_wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        height: 120px;
+    }
+
+    /* 반응형 */
+    #header .gnb {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 999;
+
+        background: #fff;
+        border-right: 1px solid #ddd;
+
+        height: 200vh;
+        width: calc(100% - 120px);
+
+        padding: 120px 24px 0 24px;
+        transition: left 0.4s;
+    }
+
+    #header .gnb.on {
+        left: 0;
+        /* script쓰고 .on적으면 됨. 기본 반응형 완성 */
+    }
+
+
+
+    #header .gnb>ul {
+        /* 반응형 */
+        flex-direction: column;
+        /* 세로배치 */
+        gap: 0;
+
+    }
+
+    #header .gnb>ul>li {
+        position: relative;
+    }
+
+    #header .gnb>ul>li>a {
+        /* 반응형 */
+        line-height: 4rem;
+        /* 40px은 거의 룰이다. */
+        border-bottom: 1px solid #ddd;
+    }
+
+    #header .gnb>ul>li ul {
+        /* 반응형 */
+        /*display: block;
+                사이사이로 들어가버림. 없애면 숨는다. */
+        position: static;
+        /* 중요!!! 포지션을 없애버린다. 되게 중요하다!!! */
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 0);
+
+        transition: none;
+
+        border-top: 0;
+        /* 라인 하나 더 들어간거 빼준거다. */
+
+        display: none;
+        padding: 0 0;
+        box-shadow: 0 0 0 0;
+
+    }
+
+    #header .gnb>ul>li:hover ul {
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 0);
+
+    }
+
+    #header .gnb>ul>li:focus-within ul {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 0);
+    }
+
+    #header .gnb>ul>li ul li a {
+        /* 반응형 */
+        background: #f9f9f9;
+    }
+
+    #header .gnb>ul>li ul li~li a {
+        border-top: 1px solid #ddd;
+    }
+
+    #header .mbtn {
+        display: block;
+
+        position: fixed;
+        top: 40px;
+        right: 16px;
+        /* 메뉴 다시 fixed했음 */
+
+        z-index: 999
+    }
+
+    #header .hamburger {
+        padding: 0 0;
+    }
+
+    #header .hamburger-box {
+        width: 32px;
+    }
+
+    #header .hamburger-inner,
+    #header .hamburger-inner::before,
+    #header .hamburger-inner::after {
+        width: 32px;
+        height: 2px;
+
+    }
+
+    #header .utils {
+        /* 반응형 */
+        display: none;
+    }
+}
 
 
 
@@ -162,7 +300,7 @@ body {
 }
 
 .main_visual .main_visual_slide .itm01 {
-    background: url(../images/main_visual01.webp) no-repeat center center/cover;
+    background: url(../images/main_visual03.webp) no-repeat center center/cover;
 }
 
 .main_visual .main_visual_slide .itm02 {
@@ -188,6 +326,21 @@ body {
 }
 
 
+.main_visual .itm01 .slg {
+    position: absolute;
+    max-width: 144rem;
+    top: 30%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    /*쪼그라든거 펴준다.*/
+
+    text-align: right;
+
+
+}
+
 
 .main_visual .slg strong {
     display: block;
@@ -203,6 +356,8 @@ body {
 .main_visual .slg p {
     margin-bottom: 4rem;
 }
+
+.main_visual .itm01 p {}
 
 .main_visual .itm03 strong {
     display: block;
@@ -535,6 +690,6 @@ body {
     color: var(--body-color);
 }
 
-/* * {
+/** {
     outline: 1px solid tomato;
 }*/
